@@ -2,6 +2,7 @@ package com.example.calculaapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         inicializa();
 
         a = 10;
-        b = 3;
+        b = 2;
 
         sumar(a, b);
         restar(a, b);
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         restaTexto.setText("La resta es " + resta);
         multiplicacionTexto.setText("La multiplicación es " + multiplicacion);
         divisionTexto.setText("La división es " + division);
+        Log.d("MisMensajes", "Se mostraron en pantalla los resultados de las operaciones");
     }
 
     private void inicializa(){
@@ -50,24 +52,28 @@ public class MainActivity extends AppCompatActivity {
         suma = x + y;
         String sumaString;
         sumaString = Integer.toString(suma);
+        Log.d("MisMensajes", "La suma de a y b es " + sumaString);
     }
 
     private void restar(int x, int y){
         resta = x - y;
         String restaString;
         restaString = Integer.toString(resta);
+        Log.d("MisMensajes", "La resta de a y b es " + restaString);
     }
 
     private void multiplicar(int x, int y){
         multiplicacion = x * y;
         String multiplicacionString;
         multiplicacionString = Integer.toString(multiplicacion);
+        Log.d("MisMensajes", "El producto de a y b es " + multiplicacionString);
     }
 
     private void dividir(int x, int y){
         division = x / y;
         String divisionString;
         divisionString = Integer.toString(division);
+        Log.d("MisMensajes", "La division de a y b es " + divisionString);
     }
 }
 
