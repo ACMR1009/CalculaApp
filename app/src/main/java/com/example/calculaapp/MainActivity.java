@@ -2,24 +2,22 @@ package com.example.calculaapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     int a;
     int b;
 
-    EditText texto;
-    Button boton;
-
     TextView sumaTexto;
     TextView restaTexto;
     TextView multiplicacionTexto;
     TextView divisionTexto;
+
+    int suma;
+    int resta;
+    int multiplicacion;
+    int division;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,65 +28,46 @@ public class MainActivity extends AppCompatActivity {
         a = 10;
         b = 3;
 
-        suma(a, b);
-        resta(a, b);
-        multiplicacion(a, b);
-        division(a, b);
+        sumar(a, b);
+        restar(a, b);
+        multiplicar(a, b);
+        dividir(a, b);
 
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), texto.getText(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        String suma = Integer.toString(suma);
-        String resta = Integer.toString(resta);
-        String multiplicacion = Integer.toString(multiplicacion);
-        String division = Integer.toString(division);
-
-        sumaTexto.setText("La suma es " suma);
-        restaTexto.setText("La resta es " resta);
-        multiplicacionTexto.setText("La multiplicación es " multiplicacion);
-        divisionTexto.setText("La división es " division);
+        sumaTexto.setText("La suma es " + suma);
+        restaTexto.setText("La resta es " + resta);
+        multiplicacionTexto.setText("La multiplicación es " + multiplicacion);
+        divisionTexto.setText("La división es " + division);
     }
 
     private void inicializa(){
-        texto = findViewById(R.id.editText);
-        boton = findViewById(R.id.button);
-
         sumaTexto = (TextView) findViewById(R.id.textView);
         restaTexto = (TextView) findViewById(R.id.textView2);
         multiplicacionTexto = (TextView) findViewById(R.id.textView3);
         divisionTexto = (TextView) findViewById(R.id.textView4);
     }
 
-    private int suma(int x, int y){
-        int suma;
+    private void sumar(int x, int y){
         suma = x + y;
-
-        return suma;
+        String sumaString;
+        sumaString = Integer.toString(suma);
     }
 
-    private int resta(int x, int y){
-        int resta;
+    private int restar(int x, int y){
         resta = x - y;
-
-        return resta;
+        String restaString;
+        restaString = Integer.toString(resta);
     }
 
-    private int multiplicacion(int x, int y){
-        int multiplicacion;
+    private int multiplicar(int x, int y){
         multiplicacion = x * y;
-
-        return multiplicacion;
+        String multiplicacionString;
+        multiplicacionString = Integer.toString(multiplicacion);
     }
 
-    private int division(int x, int y){
-        int division;
+    private int dividir(int x, int y){
         division = x / y;
-
-        return division;
+        String divisionString;
+        divisionString = Integer.toString(division);
     }
 }
 
