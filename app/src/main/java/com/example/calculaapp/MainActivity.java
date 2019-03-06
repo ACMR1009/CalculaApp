@@ -52,19 +52,19 @@ public class MainActivity extends AppCompatActivity {
         sumaString = Integer.toString(suma);
     }
 
-    private int restar(int x, int y){
+    private void restar(int x, int y){
         resta = x - y;
         String restaString;
         restaString = Integer.toString(resta);
     }
 
-    private int multiplicar(int x, int y){
+    private void multiplicar(int x, int y){
         multiplicacion = x * y;
         String multiplicacionString;
         multiplicacionString = Integer.toString(multiplicacion);
     }
 
-    private int dividir(int x, int y){
+    private void dividir(int x, int y){
         division = x / y;
         String divisionString;
         divisionString = Integer.toString(division);
